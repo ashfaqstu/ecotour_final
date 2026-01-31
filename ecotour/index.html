@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Eco Tour | Wholesome Travel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Poppins:wght@400;500;600;700;800&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              'eco-green': '#66b966',
+              'eco-green-light': '#e8f5e9',
+              'eco-beige': '#fdfbf7',
+              'eco-brown': '#5d4037',
+              'eco-cream': '#fff9f0',
+              'eco-dark': '#0f1f15',
+              'eco-dark-surface': '#1a2e22',
+            },
+            fontFamily: {
+              sans: ['Nunito', 'sans-serif'],
+              display: ['Poppins', 'sans-serif'],
+              handwritten: ['Dancing Script', 'cursive'],
+            },
+            borderRadius: {
+              'organic': '2rem',
+              'soft': '1.5rem',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+        body {
+            background-color: #fdfbf7;
+            color: #333333;
+            overflow-x: hidden;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+        body.dark {
+            background-color: #0f1f15;
+            color: #e2e8f0;
+        }
+        .organic-card {
+            background: #ffffff;
+            border-radius: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(102, 185, 102, 0.1);
+            border: 1px solid rgba(102, 185, 102, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+        }
+        .dark .organic-card {
+            background: #1a2e22;
+            border-color: rgba(102, 185, 102, 0.1);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+        }
+        .organic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -15px rgba(102, 185, 102, 0.15);
+        }
+        .dark .organic-card:hover {
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+        }
+        .plant-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(2deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+        .btn-grow {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .btn-grow:hover {
+            transform: scale(1.05);
+        }
+        .leaf-transition {
+            mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 0 C70 30 100 50 50 100 C0 50 30 30 50 0" fill="black"/></svg>');
+            mask-size: contain;
+            mask-repeat: no-repeat;
+            mask-position: center;
+        }
+        /* Custom range styling for an organic look */
+        input[type=range] {
+            -webkit-appearance: none;
+            background: transparent;
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            height: 10px;
+            background: #e8f5e9;
+            border-radius: 5px;
+        }
+        .dark input[type=range]::-webkit-slider-runnable-track {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            background: #66b966;
+            margin-top: -7px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            cursor: pointer;
+        }
+        .app-canvas {
+            border-radius: 3rem;
+            background: #fdfbf7;
+            position: relative;
+            transition: background-color 0.5s ease;
+        }
+        .dark .app-canvas {
+            background-color: #0f1f15;
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.36.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.12.0",
+    "recharts": "https://esm.sh/recharts@^3.6.0"
+  }
+}
+</script>
+</head>
+<body class="p-4 md:p-6 lg:p-8 min-h-screen">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>

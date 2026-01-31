@@ -1,0 +1,7 @@
+{
+  "name": "Smart Eco Tour",
+  "description": "An AI-powered sustainable travel planning platform that prioritizes environmental and social impact. Users can set sustainability goals, receive eco-friendly itineraries, and match with like-minded travelers.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
